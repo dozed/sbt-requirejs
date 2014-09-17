@@ -6,7 +6,7 @@ name := "sbt-requirejs"
 
 organization := "org.scalatra.requirejs"
 
-version := "0.0.4-SNAPSHOT"
+version := "0.0.5-SNAPSHOT"
 
 scalacOptions := Seq("-optimise", "-deprecation")
 
