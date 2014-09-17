@@ -11,7 +11,7 @@ version := "0.0.5-SNAPSHOT"
 scalacOptions := Seq("-optimise", "-deprecation")
 
 libraryDependencies ++= Seq(
-  "net.liftweb" % "lift-json_2.9.1" % "2.4"
+  "org.json4s" % "json4s-jackson_2.10" % "3.2.10"
 )
 
 publishMavenStyle := false

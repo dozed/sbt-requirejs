@@ -1,7 +1,8 @@
 import sbt._
 import Keys._
-import net.liftweb.json._
-import JsonDSL._
+import org.json4s._
+import org.json4s.jackson.JsonMethods._
+import org.json4s.JsonDSL._
 
 /*_*/
 
@@ -85,6 +86,8 @@ object RequireJsPlugin extends Plugin {
       val txt = if (bpf.exists) IO.read(bpf) else ""
       val n = if (txt.startsWith("(")) txt.substring(1) else txt
       val b = if (n.trim().endsWith(")")) n.substring(0, n.length - 1) else n
+      s.log.info(bpf.getAbsolutePath)
+      s.log.info(bpf.exists.toString)
       val fileJson = if (bpf.exists) Some(parse(b)) else None
       val merged = fileJson map (_ merge bp) getOrElse bp
       val json = merged merge (
